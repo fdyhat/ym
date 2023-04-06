@@ -673,7 +673,7 @@ js_config:
   Env: opencard_id
   KeyWord:
   - - opencard_id
-  Name: joinCommon开卡
+  Name: 金币开卡（kr）
   OverdueTime: 1800
   Script: jd_opencardJBK.js
   TimeOut: 3600
