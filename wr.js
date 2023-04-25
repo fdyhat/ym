@@ -1,1 +1,6 @@
-$done({body: JSON.stringify({"startTime":1682258928,"expiredTime":1874741563,"expired":0,"isPaying":0,"permanent":0,"day":23,"remainTime":33929,"payingRemainTime":0,"canUseDiscount":0,"payingUsedDay":0,"tipforpayFlag":"0|0|1","mcardHint":"付费会员卡 9元/月","timestamp":1682404470,"random":922,"signature":"de9e21726c7aaae7254527edb0386af867c62743b9ede6842d1eb3d0a0bad1f8","isAutoRenewable":0,"historyAutoRenewable":0,"autoRenewableChannel":0,"autoRenewableTime":0,"autoRenewablePrice":1900,"savedMoney":39657,"totalFreeReadDay":0,"remainCoupon":0,"remainCount":0,"nextAutoChargeTime":2678400,"lastAutoChargeTime":0,"lastAutoChargePf":0,"autoRenewableType":"","hintsForRecharge":{"predictedSavedMoney":10315,"predictedChapterPrice":15,"pricePerMonth":900,"sendCoupons":0,"buttonTitle":"付费会员卡9元/月 · 限时特惠","buttonSubtitle":"你正在使用体验卡 · 升级付费会员卡即可阅读"},"freeBookIds":[]});
+var body = $response.body;
+var obj = JSON.parse(body);
+
+obj.expiredTime = 1879685290000;
+body = JSON.stringify(obj);
+$done({body});
