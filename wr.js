@@ -1,5 +1,20 @@
+const path1 = "/pay/memberinfo";
+
 var obj = JSON.parse($response.body);
 
-obj ={ "expiredTime":1888726173,"expired":0,"isPaying":1,"permanent":1,"day":3365}
+if ($request.url.indexOf(path1) != -1){
+	obj.isMember = 1,
+	obj.isAutoRenewable = 0,
+	obj.startTime = 1611572535,
+	obj.endTime = 4769942399,
+	obj.expiresIn = 1611572535,
+	obj.subscriptionPeriod = 1,
+	obj.subscriptionPrice = 100,
+	obj.hasPromoRight = true
+}else {
+	obj.userInfo.isV = 1,
+	obj.type = 2,
+	obj.timeWalletInfo = {"label":"你是会员·拥有无限时长","remainSeconds":0}
+}
 
 $done({body: JSON.stringify(obj)});
