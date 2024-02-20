@@ -1,1 +1,20 @@
-$done({body: JSON.stringify({\"startTime\":1682258928,\"expiredTime\":2998743249,\"expired\":0,\"isPaying\":0,\"permanent\":0,\"day\":23,\"remainTime\":2998743249,\"payingRemainTime\":0,\"canUseDiscount\":0,\"payingUsedDay\":0,\"tipforpayFlag\":\"0|0|1\",\"mcardHint\":\"付费会员卡 9元/月\",\"timestamp\":1682421406,\"random\":3595,\"signature\":\"c696d81338c78164deb03a7e74532d301694f417a5fbc7044053dd02e2996f1a\",\"isAutoRenewable\":0,\"historyAutoRenewable\":0,\"autoRenewableChannel\":0,\"autoRenewableTime\":0,\"autoRenewablePrice\":1900,\"savedMoney\":39657,\"totalFreeReadDay\":0,\"remainCoupon\":0,\"remainCount\":0,\"nextAutoChargeTime\":2678400,\"lastAutoChargeTime\":0,\"lastAutoChargePf\":0,\"autoRenewableType\":\"\",\"hintsForRecharge\":{\"predictedSavedMoney\":10315,\"predictedChapterPrice\":15,\"pricePerMonth\":900,\"sendCoupons\":0,\"buttonTitle\":\"付费会员卡9元/月 · 限时特惠\",\"buttonSubtitle\":\"你正在使用体验卡 · 升级付费会员卡即可阅读\"},\"freeBookIds\":[]});
+/*************************************
+
+项目名称：波点音乐
+
+**************************************
+
+[rewrite_local]
+https:\/\/bd-api\.kuwo\.cn url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/bodianyinyue.js
+
+[mitm]
+hostname = bd-api.kuwo.cn
+
+*************************************/
+var body = $response.body;
+body = body.replace(/\"expireDate":\d+/g, '\"expireDate":4092599349000');
+body = body.replace(/\"isVip":\d+/g, '\"isVip":1');
+body = body.replace(/\"vip":\d+/g, '\"vip":1');
+body = body.replace(/\"isPay":\d+/g, '\"isPay":1');
+body = body.replace(/\"isMv":\d+/g, '\"isMv":0');
+$done({body});
